@@ -1,9 +1,7 @@
 import './index.css'
 import React from 'react';
 import RecipeTitle from './RecipeTitle'
-
-// TODO: Import IngredientList
-
+import IngredientList from './IngredientList'
 
 function App() {
     const recipe = {
@@ -25,9 +23,7 @@ function App() {
         <article>
             <h1>Recipe Manager</h1>
             <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
-
-            {/* TODO: Add IngredientList component */}
-
+            <IngredientList ingredients={recipe.ingredients} />
         </article>
     )
 }
