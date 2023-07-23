@@ -2,6 +2,7 @@ import './index.css'
 import React from 'react';
 import RecipeTitle from './RecipeTitle'
 import IngredientList from './IngredientList'
+import StepsList from './StepsList'
 
 function App() {
     const recipe = {
@@ -17,13 +18,26 @@ function App() {
             { name: 'Salt', prepared: true },
             { name: 'Pepper', prepared: true },
         ],
+        steps: [
+            'Add cut potatoes to a pot of heavily salted water.',
+            'Bring pot to a boil.',
+            'Boil the potatoes until fork tender, about 15-20 minutes.',
+            'Strain the potatoes.',
+            'Return potatoes to pot.',
+            'Add butter, cream, salt, and pepper to taste.',
+            'Mash potatoes.',
+            'Reseason and add butter and cream as desired.'
+        ]
     };
 
     return (
         <article>
             <h1>Recipe Manager</h1>
             <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
+            <h4>Ingredients</h4>
             <IngredientList ingredients={recipe.ingredients} />
+            <h4>Steps</h4>
+            <StepsList steps={recipe.steps} />
         </article>
     )
 }
